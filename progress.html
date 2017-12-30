@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<link rel="stylesheet" href="progress.css" type="text/css"/>
+<script type="text/javascript" src="progress.js"></script>
+</head>
+<h1>Progress</h1>
+<body>
+<div class="flex-container">
+	
+	<!-- контейнер для progress bar'a !-->
+	<div id="progress-bar-container">
+		<svg xmlns="http://www.w3.org/2000/svg"
+			 viewBox="-1 -1 34 34">
+		  
+			<circle cx="16" cy="16" r="15.9155"
+				  class="progress-bar__background" />
+		  
+			<circle cx="16" cy="16" r="15.9155"
+				  class="progress-bar__progress 
+						 js-progress-bar" />
+		</svg>
+	</div>
+	
+	<div>
+		<!-- Элемент управления Value -->
+		<div class="switcher">
+			<input id="percent" name="percent" onchange="progress.setValue(this.value)">
+			<label for="percent">Value</label>
+		</div>
+		<!-- Переключатель Animate -->
+		<div class="switcher">
+			<div class="can-toggle demo-rebrand-2">
+			 <input id="animate" type="checkbox" onchange = "
+     if(this.checked) {
+        progress.setMod('animated', 'yes');
+     }
+	else
+	{
+		progress.setMod('animated', '');
+	}">
+			 <label for="animate">
+			 <div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+			 <div class="can-toggle__label-text" >Animate</div>
+			 </label>
+			</div>
+		</div>
+
+		<!-- Переключатель Hide -->
+		<div class="switcher">
+			<div class="can-toggle demo-rebrand-2">
+			 <input id="hide" type="checkbox" onchange = "
+     if(this.checked) {
+        progress.hide();
+     }
+	else
+	{
+		progress.show();
+	}">
+			 <label for="hide">
+			 <div class="can-toggle__switch" data-checked="Yes" data-unchecked="No"></div>
+			 <div class="can-toggle__label-text">Hide</div>
+			 </label>
+			</div>
+		</div>
+	</div>
+	<script>
+		var progress = new Progress({
+		  elem: document.getElementById('progress-bar-container')
+		});
+	</script>
+</div>
+</body>
+</html>
