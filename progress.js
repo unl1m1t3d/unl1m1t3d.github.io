@@ -3,8 +3,10 @@ function Progress(options) {
 	var elem = options.elem;
   
 	/**
-		Эта функция устанавливает анимацию элемента или снимает ее.
-		(по крайней мере, в текущей реализации так).
+	* Переключает состояние элемента (в данном случае переключает в анимированное состояние или снимает его).
+	*
+	* @param {String} mode - Название состояния, которое требуется переключить.
+	* @param {String} flag - Если flag равен yes, то состояние, указанное в параметре mode, нужно включить, иначе отключить.
 	*/
 	
 	function setMod(mode, flag) {
@@ -22,8 +24,10 @@ function Progress(options) {
 	};
 
 	/**
-		Эта функция принимает на вход значение val и, если оно числовое,
-		устанавливает значение js progress bar'a, равное val.
+	 * Эта функция принимает на вход значение val и, если оно числовое,
+	 * устанавливает значение js progress bar'a, равное val.
+	 *
+	 * @param {Number} val - Значение progress bar'a, на которое надо сместить dashoffset.
 	*/
 	function setValue(val)
 	{
@@ -46,7 +50,7 @@ function Progress(options) {
 	}
 	
 	/**
-		Скрываем элемент
+	* Скрываем элемент
 	*/
 	
 	function hide()
@@ -55,7 +59,7 @@ function Progress(options) {
 		circle.style.visibility = "hidden";
 	}
 	/**
-		Показываем элемент
+	* Показываем элемент
 	*/
 	function show()
 	{
