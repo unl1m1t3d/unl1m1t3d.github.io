@@ -1,3 +1,10 @@
+/**
+* Функция, создающая progress bar.
+*
+* @param {Object} options - массив свойств, на основе которых будет генерироваться объект Progress
+* @param {Object} options[elem] - корневой элемент, внутри которого должен быть уже расположен сверстанный progress bar.
+*/
+
 function Progress(options) {
 
 	var elem = options.elem;
